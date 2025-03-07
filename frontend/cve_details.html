@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CVE Details</title>
+    <!--<link rel="stylesheet" href="styles.css">-->
+</head>
+<body>
+    <h1>CVE Details</h1>
+
+    <p><strong>ID:</strong> {{ cve_id }}</p>
+    <p><strong>Description:</strong> {{ description }}</p>
+    <p><strong>Score:</strong> {{ base_score }}</p>
+    <p><strong>Published Date:</strong> {{ published_date }}</p>
+    <p><strong>Last Modified:</strong> {{ last_modified }}</p>
+    <!--
+    {% if cve_id %}
+        <p><strong>ID:</strong> {{ cve_id }}</p>
+        <p><strong>Description:</strong> {{ description }}</p>
+        <p><strong>Score:</strong> {{ base_score }}</p>
+        <p><strong>Published Date:</strong> {{ published_date }}</p>
+        <p><strong>Last Modified:</strong> {{ last_modified }}</p>
+    {% else %}
+        <h2>No CVE details found</h2>
+    {% endif %}-->
+
+    <button onclick="window.history.back()">Go Back</button>
+</body>
+</html>

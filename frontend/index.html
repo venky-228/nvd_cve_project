@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CVE Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CVE Data</h1>
+
+    <div>
+        <label for="perPage">Results Per Page:</label>
+        <select id="perPage">
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <p>Total Records: <span id="totalRecords">0</span></p>
+
+    <table id="cveTable">
+        <thead>
+            <tr>
+                <th>CVE ID</th>
+                <th>Description</th>
+                <th>Score</th>
+                <th>Published Date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div>
+        <button id="prevPage">Previous</button>
+        <span>Page <span id="currentPage">1</span></span>
+        <button id="nextPage">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

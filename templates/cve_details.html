@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CVE Details - {{ cve_id }}</title>
+    <!-- Reference the CSS and JS files from the static path -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/cve_details.js" defer></script>
+</head>
+<body>
+    <h1>CVE Details</h1>
+    <p><strong>ID:</strong> {{ cve_id }}</p>
+    <p><strong>Description:</strong> {{ description }}</p>
+    <p><strong>Score:</strong> {{ base_score }}</p>
+    <p><strong>Published Date:</strong> {{ published_date }}</p>
+    <p><strong>Last Modified:</strong> {{ last_modified }}</p>
+    <button onclick="window.history.back()">Go Back</button>
+</body>
+</html>
+
