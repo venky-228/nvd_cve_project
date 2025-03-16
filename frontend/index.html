@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>CVE Data</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1>CVE Data</h1>
@@ -17,6 +19,17 @@
     </div>
 
     <p>Total Records: <span id="totalRecords">0</span></p>
+
+    <div class="filters">
+        <input type="number" id="baseScoreMin" placeholder="Min Score">
+        <input type="number" id="baseScoreMax" placeholder="Max Score">
+        <input type="date" id="publishedAfter">
+        <input type="date" id="publishedBefore">
+        <input type="text" id="searchTerm" placeholder="Search in descriptions">
+        <button onclick="applyFilters()">Apply Filters</button>
+        <!-- Error message container -->
+        <div id="errorMessage" style="color: red; margin-top: 8px;"></div>
+    </div>
 
     <table id="cveTable">
         <thead>
@@ -36,6 +49,13 @@
         <button id="nextPage">Next</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/script.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial data load
+            applyFilters();
+        });
+    </script>
 </body>
 </html>

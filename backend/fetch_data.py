@@ -3,6 +3,8 @@ from sqlalchemy.orm import sessionmaker
 from database import engine, SessionLocal
 from models import CVE
 from datetime import datetime
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 
 BASE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 
@@ -59,5 +61,27 @@ def fetch_cve_data():
     session.commit()
     session.close()
     print("✅ CVE data fetched and stored successfully!")
+
+# def initialize_scheduler(interval_seconds=10):
+#     scheduler = BackgroundScheduler()
+#     print("Initializing scheduler with interval: ", interval_seconds, " seconds")
+#     scheduler.add_job(
+#         fetch_cve_data,
+#         trigger=IntervalTrigger(seconds=interval_seconds),
+#         id='fetch_cve_data_job',
+#         name='Fetch CVE data periodically'
+#     )
+#     scheduler.start()
+
+def initialize_scheduler(interval_hours=1):
+    scheduler = BackgroundScheduler()
+    print("Initializing scheduler with interval: ", interval_hours, " hours")
+    scheduler.add_job(
+        fetch_cve_data,
+        trigger=IntervalTrigger(hours=interval_hours),
+        id='fetch_cve_data_job',
+        name='Fetch CVE data periodically'
+    )
+    scheduler.start()
 
 fetch_cve_data()

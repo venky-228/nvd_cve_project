@@ -2,4 +2,6 @@ fastapi
 uvicorn
 requests
 sqlalchemy
-sqlite3
+APScheduler
+jinja2
+python-multipart

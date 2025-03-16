@@ -35,3 +35,34 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 }
+
+/* Add these styles to prevent clicking on error messages */
+.error-row, .no-data-row {
+    pointer-events: none;
+}
+
+/* But allow clicking on buttons within these rows */
+.error-row button, .no-data-row button {
+    pointer-events: auto;
+}
+
+/* Style for the error message */
+.error-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    margin: 10px 0;
+}
+
+/* Style for no data message */
+.no-data-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    margin: 10px 0;
+}

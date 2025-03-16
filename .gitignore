@@ -1,1 +1,14 @@
 cve_data.db
+.DS_Store
+backend/__init__.py
+backend/__pycache__/__init__.cpython-312.pyc
+backend/__pycache__/database.cpython-312.pyc
+backend/__pycache__/fetch_data.cpython-312.pyc
+backend/__pycache__/main.cpython-312.pyc
+backend/__pycache__/models.cpython-312.pyc
+backend/__pycache__/routes.cpython-312.pyc
+frontend/.DS_Store
+run.py
+venv/
+.idea
+
